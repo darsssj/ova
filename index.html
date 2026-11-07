@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los medios de comunicación: ¡conectados con el mundo!</title>
+<style>
+:root{--ink:#0d3b66;--sky:#e8f4ff;--sun:#ffc93c;--coral:#ff6b57;--mint:#2bb594;--card:#fff;--bad:#c0392b}
+@media (prefers-color-scheme:dark){:root{--ink:#e8f4ff;--sky:#0b2540;--card:#12365c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sky);color:var(--ink);font:20px/1.55 "Trebuchet MS",Verdana,sans-serif}
+header{background:var(--ink);color:#fff;padding:14px 20px;display:flex;gap:14px;align-items:center}
+header b{font-size:1.05rem}
+header .wave{font-size:2rem}
+#bar{height:10px;background:#ffffff33}#bar i{display:block;height:100%;width:0;background:var(--sun);transition:width .3s}
+nav{display:flex;gap:8px;padding:12px 20px;flex-wrap:wrap}
+nav button{font:inherit;font-size:.85rem;border:3px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+nav button.on{background:var(--sun);color:#0d3b66;font-weight:700}
+main{max-width:860px;margin:0 auto;padding:8px 20px 90px}
+.card{background:var(--card);border:3px solid var(--ink);border-radius:26px 26px 26px 6px;padding:24px 28px;box-shadow:6px 6px 0 var(--ink)}
+h1{font-size:2rem;line-height:1.15;margin:0 0 .5em}h2{font-size:1.45rem;margin:0 0 .6em}h3{margin:.8em 0 .3em}
+p{max-width:62ch}
+.tag{display:inline-block;background:var(--coral);color:#fff;border-radius:999px;padding:2px 14px;font-size:.8rem;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.chip{background:var(--sky);border:3px solid var(--ink);border-radius:18px;padding:12px;text-align:center}
+.chip span{display:block;font-size:2.6rem}
+.say{background:var(--sun);color:#0d3b66;border-radius:16px;padding:12px 16px;margin:14px 0}
+iframe{width:100%;aspect-ratio:16/9;border:3px solid var(--ink);border-radius:14px}
+a.btn,.opt,.nx button{font:inherit;cursor:pointer;text-decoration:none}
+a.btn{display:inline-block;background:var(--mint);color:#fff;border-radius:999px;padding:8px 20px;font-weight:700;margin:6px 6px 6px 0}
+.q{margin:18px 0}.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:10px 16px;border:3px solid var(--ink);border-radius:14px;background:var(--card);color:var(--ink)}
+.opt.ok{background:var(--mint);color:#fff}.opt.no{background:var(--bad);color:#fff}
+.fb{min-height:1.5em;font-weight:700}
+.nx{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:3px solid var(--ink);display:flex;justify-content:space-between;padding:10px 20px}
+.nx button{font-size:1rem;font-weight:700;border:3px solid var(--ink);border-radius:999px;padding:8px 22px;background:var(--sun);color:#0d3b66}
+.nx button:disabled{opacity:.35;cursor:default}
+.stage{height:300px;margin:-8px -10px 14px;border-radius:20px;background:radial-gradient(circle at 50% 40%,#1b5fa8,#0d3b66);cursor:grab;overflow:hidden}.stage:empty{display:none}.stage canvas{display:block;width:100%!important;height:100%!important}
+.grid{perspective:700px}.chip{transition:transform .3s,box-shadow .3s;transform-style:preserve-3d}.chip:hover{transform:rotateY(-14deg) rotateX(6deg) translateZ(14px);box-shadow:10px 10px 0 var(--ink)}
+@media (prefers-reduced-motion:reduce){.chip{transition:none}.chip:hover{transform:none}}
+.pic{display:block;width:100%;height:auto;border:3px solid var(--ink);border-radius:18px;margin:6px 0 14px}.pic.tall{max-width:520px;margin-inline:auto}
+:focus-visible{outline:4px solid var(--coral);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){#bar i{transition:none}}
+@media (max-width:560px){body{font-size:18px}.card{padding:18px}}
+</style>
+</head>
+<body>
+<header><span class="wave" aria-hidden="true">📡</span><b>Los medios de comunicación: ¡conectados con el mundo!</b></header>
+<div id="bar"><i></i></div>
+<nav id="menu" aria-label="Lecciones"></nav>
+<main id="app" tabindex="-1"></main>
+<div class="nx"><button id="prev">Atrás</button><button id="next">Siguiente</button></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ---------- SCORM 1.2 ---------- */
+var A=(function(){var w=window;for(var i=0;i<9&&w;i++){try{if(w.API)return w.API}catch(e){}if(w===w.parent)break;w=w.parent}return null})();
+function S(k,v){try{A&&A.LMSSetValue(k,String(v))}catch(e){}}
+if(A){A.LMSInitialize("");S("cmi.core.lesson_status","incomplete")}
+window.addEventListener("beforeunload",function(){try{A&&(A.LMSCommit(""),A.LMSFinish(""))}catch(e){}});
+
+/* ---------- Contenido (según el guion técnico) ---------- */
+var chips=function(a){return '<div class="grid">'+a.map(function(x){return '<div class="chip"><span>'+x[0]+'</span>'+x[1]+'</div>'}).join('')+'</div>'};
+var pic=function(n,a,c){return '<img class="pic '+(c||'')+'" src="img/'+n+'.jpg" alt="'+a+'" loading="lazy">'};
+var link=function(u,t){return '<a class="btn" href="'+u+'" target="_blank" rel="noopener">'+t+'</a>'};
+var WW='https://wordwall.net/es/resource/93572480/medios-de-comunicaci%C3%B3n-2do-grado-primaria';
+var Q1=[{q:'Escuchas las noticias en la radio. ¿Qué estás usando?',o:['Un medio de comunicación','Un juguete','Una receta'],a:0},
+{q:'¿Cuál medio nos permite ver imágenes y escuchar sonidos?',o:['La carta','La televisión','El periódico'],a:1},
+{q:'Un niño llama a su abuela por teléfono. ¿Para qué sirve el teléfono?',o:['Para comunicarnos','Para cocinar','Para dormir'],a:0}];
+var Q2=[{q:'El periódico es un medio…',o:['Escrito','Audiovisual','Digital'],a:0},
+{q:'El cine y la televisión combinan imágenes y…',o:['Olores','Sonidos','Sabores'],a:1},
+{q:'Una videollamada es un medio…',o:['Escrito','Digital','De papel'],a:1}];
+var QF=Q1.concat(Q2,[{q:'Para estar seguro en internet, debo…',o:['Pedir ayuda a un adulto','Dar mi dirección a desconocidos','Creer todo lo que veo'],a:0},
+{q:'Ver dibujos animados en la televisión sirve para…',o:['Informar','Entretener','Escribir una carta'],a:1},
+{q:'¿Cuál es una función de los medios de comunicación?',o:['Informar','Esconder mensajes','Hacer ruido'],a:0}]);
+var L=[
+{n:'Lección 1',t:'Descubramos los medios de comunicación',s:[
+ {t:'¡Bienvenidos al mundo de la comunicación!',h:pic('i1','Niños de distintas culturas se saludan con globos de diálogo y un megáfono: ¡Bienvenidos al mundo de la comunicación!')+'<p><b>¡Hola, pequeños exploradores!</b> ¿Alguna vez has escuchado una noticia en la radio? ¿Has visto tus dibujos animados favoritos en la televisión? ¿Has hablado por teléfono con alguien que está lejos?</p>'+chips([['📻','Radio'],['📺','Televisión'],['📞','Teléfono']])+'<p>Los medios de comunicación nos permiten compartir información, transmitir mensajes y mantenernos en contacto con otras personas. ¡Prepárate para descubrirlos!</p><h3>Objetivo</h3><p>Reconocer los diferentes medios de comunicación, sus características y su importancia en la vida cotidiana.</p>'},
+ {t:'1.1 ¿Qué son los medios de comunicación?',h:pic('i2','Niños usan periódico, televisión, radio, celular y tableta para comunicarse')+'<p>Son herramientas que usamos para transmitir información, compartir ideas, expresar sentimientos y comunicarnos con otras personas. Gracias a ellos conocemos noticias, aprendemos, escuchamos música y sabemos lo que sucede en otros lugares.</p><div class="say"><b>En palabras más sencillas…</b> Los medios de comunicación nos ayudan a enviar y recibir mensajes.</div>'+chips([['📺','La televisión'],['📻','La radio'],['📞','El teléfono'],['📰','El periódico'],['✉️','Las cartas'],['🌐','Internet']])},
+ {t:'¿Por qué son importantes?',h:pic('i3','Una familia escucha la radio, una niña lee el periódico y un niño habla por celular')+'<p>Hacen parte de nuestra vida diaria porque nos permiten informarnos, comunicarnos con familiares y amigos, aprender, entretenernos y compartir ideas.</p><h3>Observa estos ejemplos</h3><p>📻 Una familia escucha las noticias en la radio.<br>📞 Un niño llama a su abuela por teléfono.<br>📰 Una niña lee una noticia en el periódico.</p><p>En todos estos casos se están usando medios de comunicación.</p><h3>Juego contra el tiempo</h3>'+link(WW,'Jugar en Wordwall')},
+ {t:'1.2 ¿Cuáles son los medios de comunicación?',h:'<iframe src="https://www.youtube.com/embed/hxwzsnIuyLs" title="Video introductorio" allowfullscreen loading="lazy"></iframe><p>'+link('https://youtu.be/hxwzsnIuyLs','Ver el video en YouTube')+'</p><p><b>📺 La televisión:</b> imágenes, sonidos, noticias y programas.<br><b>📻 La radio:</b> noticias, música y entrevistas.<br><b>📰 El periódico:</b> medio escrito con noticias importantes.<br><b>📞 El teléfono:</b> llamadas y mensajes.<br><b>✉️ Las cartas:</b> mensajes escritos para compartir información o sentimientos.<br><b>🌐 Internet:</b> buscar información, aprender y comunicarnos.</p>'},
+ {t:'1.3 Exploremos lo aprendido',quiz:Q1,h:'<p>Selecciona la respuesta correcta.</p>',end:'<p><b>¡Muy bien!</b> Ahora sabes qué son los medios de comunicación y conoces algunos ejemplos.</p>'+link(WW,'Más práctica en Wordwall')}]},
+{n:'Lección 2',t:'Conozcamos los tipos de medios',s:[
+ {t:'¡Cada medio tiene una forma diferente de comunicar!',h:'<p>Podemos clasificar los medios según la manera en que transmiten sus mensajes: algunos usan palabras escritas, otros sonidos y otros combinan imágenes y sonidos. ¡Vamos a descubrirlos!</p>'+chips([['📰','Escritos'],['🎬','Audiovisuales'],['💻','Digitales']])},
+ {t:'2.1 Los medios escritos',h:'<p>Usan palabras escritas para transmitir información. Podemos leerlos para conocer noticias o compartir pensamientos.</p>'+chips([['📰','El periódico: noticias y acontecimientos'],['📖','Las revistas: artículos y fotografías'],['✉️','Las cartas: mensajes para otras personas']])+'<div class="say">Cuando lees una carta que alguien te envió, usas un medio escrito.</div>'},
+ {t:'2.2 Los medios audiovisuales',h:'<p>Combinan imágenes y sonidos para transmitir información.</p>'+chips([['📺','La televisión: noticias, películas y dibujos'],['🎬','El cine: películas con imágenes y sonidos'],['▶️','Los videos: imágenes en movimiento y sonidos']])},
+ {t:'Los medios digitales',h:'<p>Usan dispositivos electrónicos y herramientas digitales para compartir información y comunicarnos con personas que están lejos.</p>'+chips([['🌐','Internet'],['📹','Las videollamadas'],['📧','El correo electrónico'],['📱','Las plataformas digitales']])},
+ {t:'2.3 Juego interactivo',quiz:Q2,h:'<p>Clasifica cada medio. ¡Tú puedes!</p>'+link('https://mobbyt.com/videojuego/educativo/play.php?Id=237125','Abrir el juego interactivo'),end:'<p><b>¡Excelente trabajo!</b> Los escritos se leen. Los audiovisuales se ven y se escuchan. Los digitales usan herramientas tecnológicas.</p>'}]},
+{n:'Lección 3',t:'La importancia de los medios',s:[
+ {t:'¡Comunicarnos también es aprender!',h:'<p>Los medios nos ayudan a aprender, informarnos, compartir experiencias y mantenernos cerca de las personas que queremos. Ahora descubriremos por qué son tan importantes y cómo usarlos bien.</p>'},
+ {t:'3.1 ¿Para qué sirven?',h:'<p><b>1. Informar.</b> Conocer lo que sucede en la comunidad y en el mundo. <i>Ejemplo: escuchar las noticias en la radio.</i></p><p><b>2. Educar.</b> Aprender cosas nuevas. <i>Ejemplo: ver un video educativo.</i></p><p><b>3. Entretener.</b> Pasar momentos divertidos. <i>Ejemplo: ver dibujos animados.</i></p><p><b>4. Comunicar.</b> Compartir mensajes con otras personas. <i>Ejemplo: llamar a un familiar.</i></p>'},
+ {t:'3.2 Usémoslos responsablemente',h:'<p>✅ Pedir ayuda a un adulto cuando uso internet.<br>✅ No compartir información personal con desconocidos.<br>✅ Respetar a las personas cuando envío mensajes.<br>✅ No creer toda la información sin comprobarla.<br>✅ Usar los dispositivos con moderación.<br>✅ Elegir contenidos apropiados para mi edad.</p><div class="say">La comunicación siempre debe estar acompañada de respeto y responsabilidad.</div>'},
+ {t:'3.3 ¡Conviértete en un comunicador!',h:pic('i4','Guía de la actividad Mi Pequeño Periódico con cinco pasos y un ejemplo de noticia','tall')+'<p>Imagina que eres un pequeño periodista y debes crear tu propio medio de comunicación. Con ayuda de tu docente, dibújalo o represéntalo.</p><h3>Socialicemos nuestros trabajos</h3><p>Responde en voz alta:<br>• ¿Qué medio de comunicación creaste?<br>• ¿Para qué sirve?<br>• ¿Qué aprendiste sobre los medios de comunicación?<br>• ¿Cuál usas más en tu vida diaria?</p>'}]},
+{n:'Cierre',t:'Evaluación y créditos',s:[
+ {t:'Evaluación final',quiz:QF,final:1,h:'<p>Responde las 9 preguntas. Al terminar verás tu resultado.</p>'},
+ {t:'Final del OVA',h:'<h3>¡Felicitaciones, pequeños comunicadores!</h3><p>Has terminado este recorrido por el maravilloso mundo de los medios de comunicación. Ahora sabes qué son, cuáles son sus tipos, para qué sirven y por qué debemos utilizarlos responsablemente.</p><p>Recuerda que comunicar es compartir, aprender, informar y expresar nuestras ideas con respeto.</p><div class="say">¡Sigue explorando, aprendiendo y comunicándote con el mundo!</div>'+pic('i5','Certificado de logro por aprobar todas las lecciones')},
+ {t:'Glosario y créditos',h:'<h3>Glosario</h3><p><b>Medio de comunicación:</b> herramienta para enviar y recibir mensajes.<br><b>Noticia:</b> información sobre algo que sucede.<br><b>Audiovisual:</b> que usa imágenes y sonidos.<br><b>Digital:</b> que usa aparatos electrónicos.</p><h3>Créditos</h3><p>Autor(es): <i>[completar nombres]</i><br>Institución: <i>[completar]</i><br>Recursos externos: Wordwall, Mobbyt y YouTube (enlaces del guion técnico).</p>'}]}];
+
+/* ---------- Escena 3D: planeta con medios en órbita ---------- */
+var T3=null,RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function mount3D(){var el=document.getElementById('stage');if(!el||!window.THREE)return;var W=THREE;
+ if(!T3){try{var r=new W.WebGLRenderer({antialias:true,alpha:true}),sc=new W.Scene(),cam=new W.PerspectiveCamera(45,2,.1,100),g=new W.Group(),o=new W.Group(),rip=[];
+  cam.position.set(0,1.4,8);sc.add(g,o);o.rotation.x=.45;
+  g.add(new W.Mesh(new W.SphereGeometry(1.6,40,28),new W.MeshStandardMaterial({color:0x2e8bff,roughness:.55})),new W.Mesh(new W.SphereGeometry(1.64,18,12),new W.MeshBasicMaterial({color:0xffffff,wireframe:true,transparent:true,opacity:.35})));
+  sc.add(new W.AmbientLight(0xffffff,.75));var d=new W.DirectionalLight(0xffffff,.9);d.position.set(3,4,5);sc.add(d);
+  ['📺','📻','📞','📰','✉️','🌐'].forEach(function(e,i){var c=document.createElement('canvas');c.width=c.height=128;var x=c.getContext('2d');x.font='96px serif';x.textAlign='center';x.textBaseline='middle';x.fillText(e,64,70);
+   var sp=new W.Sprite(new W.SpriteMaterial({map:new W.CanvasTexture(c),transparent:true})),a=i*Math.PI/3;sp.position.set(Math.cos(a)*3.2,0,Math.sin(a)*3.2);sp.scale.set(1.3,1.3,1);o.add(sp)});
+  [0,.5].forEach(function(k){var m=new W.Mesh(new W.RingGeometry(1.7,1.76,64),new W.MeshBasicMaterial({color:0xffc93c,transparent:true,side:W.DoubleSide}));m.rotation.x=Math.PI/2;m.userData.k=k;rip.push(m);sc.add(m)});
+  var dn=false;r.domElement.addEventListener('pointerdown',function(){dn=true});addEventListener('pointerup',function(){dn=false});
+  r.domElement.addEventListener('pointermove',function(e){if(dn)g.rotation.y+=e.movementX*.01});
+  var t=0;(function loop(){requestAnimationFrame(loop);if(!r.domElement.isConnected)return;if(!RM){t+=.006;g.rotation.y+=.004;o.rotation.y-=.006}
+   rip.forEach(function(m){var u=(t*1.2+m.userData.k)%1;m.scale.setScalar(1+u*1.2);m.material.opacity=RM?.3:(1-u)*.7});r.render(sc,cam)})();
+  T3={r:r,cam:cam}}catch(e){return}}
+ el.appendChild(T3.r.domElement);var w=el.clientWidth,h=el.clientHeight;T3.r.setPixelRatio(Math.min(devicePixelRatio,2));T3.r.setSize(w,h,false);T3.cam.aspect=w/h;T3.cam.updateProjectionMatrix()}
+/* ---------- Motor ---------- */
+var P=[];L.forEach(function(l,i){l.s.forEach(function(s,j){P.push({l:i,s:s,first:j===0})})});
+var cur=0,app=document.getElementById('app'),score=0,done={};
+function quiz(box,qs,fin){var n=0,ok=0;function show(){var q=qs[n];box.innerHTML='<div class="q"><h3>Pregunta '+(n+1)+' de '+qs.length+'</h3><p>'+q.q+'</p></div><div class="fb" role="status"></div>';
+ q.o.forEach(function(t,i){var b=document.createElement('button');b.className='opt';b.textContent=t;b.onclick=function(){var all=box.querySelectorAll('.opt');all.forEach(function(x){x.disabled=true});
+  var good=i===q.a;if(good)ok++;b.classList.add(good?'ok':'no');all[q.a].classList.add('ok');box.querySelector('.fb').textContent=good?'¡Muy bien! 🎉':'¡Casi! La respuesta correcta está en verde.';
+  var nx=document.createElement('button');nx.className='opt';nx.textContent=n+1<qs.length?'Siguiente pregunta':'Ver resultado';nx.onclick=function(){n++;n<qs.length?show():fin(ok)};box.appendChild(nx);nx.focus()};box.insertBefore(b,box.querySelector('.fb'))})}
+ show()}
+function render(){var p=P[cur],s=p.s;
+ app.innerHTML='<article class="card"><span class="tag">'+L[p.l].n+': '+L[p.l].t+'</span><h2>'+s.t+'</h2>'+s.h+'<div id="qz"></div><div id="end"></div></article>';
+ if(p.first&&p.l<3){var st=document.createElement('div');st.id='stage';st.className='stage';st.setAttribute('aria-hidden','true');app.querySelector('h2').before(st);mount3D()}
+ if(s.quiz){quiz(document.getElementById('qz'),s.quiz,function(ok){var pct=Math.round(ok*100/s.quiz.length),box=document.getElementById('qz');
+  box.innerHTML='<h3>Resultado: '+ok+' de '+s.quiz.length+' ('+pct+'%)</h3><p>'+(pct>=60?'¡Felicitaciones, pequeño explorador! ⭐':'Repasa las lecciones e inténtalo otra vez.')+'</p>';
+  document.getElementById('end').innerHTML=s.end||'';
+  if(s.final){score=pct;S('cmi.core.score.min',0);S('cmi.core.score.max',100);S('cmi.core.score.raw',pct);S('cmi.core.lesson_status',pct>=60?'passed':'failed');try{A&&A.LMSCommit('')}catch(e){}}})}
+ done[cur]=1;var tot=P.length;document.querySelector('#bar i').style.width=Math.round((cur+1)*100/tot)+'%';
+ document.getElementById('prev').disabled=cur===0;document.getElementById('next').disabled=cur===tot-1;
+ [].forEach.call(document.querySelectorAll('#menu button'),function(b,i){b.className=i===p.l?'on':''});
+ S('cmi.core.lesson_location',cur);if(!A||true){if(cur===tot-1&&!s.final&&score===0)S('cmi.core.lesson_status','completed')}
+ app.focus();window.scrollTo(0,0)}
+var menu=document.getElementById('menu');
+L.forEach(function(l,i){var b=document.createElement('button');b.textContent=l.n;b.onclick=function(){cur=P.findIndex(function(p){return p.l===i});render()};menu.appendChild(b)});
+document.getElementById('prev').onclick=function(){cur--;render()};
+document.getElementById('next').onclick=function(){cur++;render()};
+render();
+</script>
+</body>
+</html>
